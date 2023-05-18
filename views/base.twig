@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		{% block link %}
+			<link rel="stylesheet" href="/css/style.css">
+			<link rel="stylesheet" href="/css/responsive.css">
+		{% endblock %}
+	</head>
+	<body>
+		<div class="containerbody">
+			{% block header %} <p></p> {% endblock %}
+			<main>
+				{% include "./layouts/_border.twig" %}
+				{% block main %}{% endblock %}
+			</main>
+			
+			{% block footer %} {% include "./layouts/_footer.twig" %} {% endblock %}
+		</div>
+		<div class="mesh"></div>
+		
+		{% block script %} <script src="/js/script.js"></script> {% endblock %}
+	</body>
+</html>

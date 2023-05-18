@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px )  {
+    body {
+        background-image: url('../img/bgresp.jpeg');
+    }
+    #copyright{
+        margin: 5px;
+    }
+   
+}

@@ -1,0 +1,8 @@
+{% extends "../../base.twig" %}
+
+
+{% block main %}
+        {% for project in projects %}
+            {% include "../../layouts/_displayProject.twig" %}
+        {% endfor %}
+{% endblock %}
