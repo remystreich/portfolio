@@ -5,10 +5,13 @@ const authguard = require("../services/authguard")
 //afficher dashboard owner
 projectRouter.get('/dashboard', authguard, async (req, res) => {
     try {
+        console.log(req.session)
         let project = await projectsModel.find()
         res.render('templates/owner/dashboard.twig',{
-            projects: project
+            projects: project,
+            user: req.session.owner
         })
+        
     } catch (error) {
         console.log(error);
         res.send(error)

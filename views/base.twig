@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div class="containerbody">
-			{% block header %} <p></p> {% endblock %}
+			{% block header %} {% include "./layouts/_header.twig" %} {% endblock %}
 			<main>
 				{% include "./layouts/_border.twig" %}
 				{% block main %}{% endblock %}

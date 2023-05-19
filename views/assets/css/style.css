@@ -1,6 +1,14 @@
 @font-face {
     font-family: rodin;
-    src: url('../fonts/FOT-Rodin\ Pro\ DB.otf');
+    src: url('../fonts/rodin.otf');
+}
+@font-face {
+    font-family: rodinbold;
+    src: url('../fonts/rodindb.otf');
+}
+@font-face {
+    font-family: rodinthin;
+    src: url('../fonts/rodinlight.otf');
 }
 
 * {
@@ -32,9 +40,7 @@ body {
     background-size: cover;
     position: absolute;
 }
-main{
-    border-top: 3px solid #444239 ;
-}
+
 .containerCenter {
     display: flex;
     justify-content: center;
@@ -59,7 +65,7 @@ main{
     background-color: #48463d;
     padding:0px 20px;
 }
-/***************** inputs */
+/***************** inputs ************************************************************************************************************************/
 .form__group {
     position: relative;
     padding: 24px 20px 0;
@@ -77,6 +83,7 @@ main{
     background: transparent;
     transition: border-color 0.2s;
     height: 33px;
+    font-family: rodinbold;
 }
 
 .form__field::placeholder {
@@ -97,10 +104,10 @@ main{
     transition: 0.2s;
     font-size: 1rem;
     color: #656254;
+    
 }
 
 .form__field:focus {
-    
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
@@ -114,10 +121,11 @@ main{
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    font-weight: 700;
+    font-family: rodinthin;
 }
 
-/*******************************/
+/***************************************************************************************************************************/
+/***boutons*/
 
 .button{
     color: #d7d1b8;
@@ -161,7 +169,7 @@ main{
         width: 116px;
     }
     100% {
-      width: 0px;
+        width: 0px;
     }
   }
   @keyframes fade-in {
@@ -173,11 +181,11 @@ main{
     }
   }
 
-  footer{
+/****footer******************************************************************************************************/
+ 
+footer{
     text-align: center;
     margin: 20px 0px;
-    
-    border-top: 3px solid #444239 ;
   }
 
   footer ul{
@@ -191,14 +199,67 @@ main{
   }
 
 .bordertop{
+    border-top: 3px solid #444239 ;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-.test{
+.borderlogo{
     border-left: #444239 solid 6px;
     border-right: #444239 solid 6px;
     height: 6px;
     flex: 1;
-    text-align: center;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.borderlogo div{
+    padding-top: 16px;
+}
+
+/***************HEADER ************************************************************************************/
+
+#navheader{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.liheader{
+    margin-bottom: 11px;
+    background-color: #b3ae9a;
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+.liheader:hover{
+    background-color:#48463d;
+}
+
+.menutitle{
+    font-size: 20px; 
+    margin-right: 4px ;  
+}
+.liheader:hover .menutitle{
+      color: #cac5afe0;
+}
+.pictogram{
+    color: #b3ae9a;
+    background-color: #48463d;
+    font-size: 20px;
+    margin-right: 5px;
+    margin: 4px;
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.liheader:hover .pictogram{
+    color: #48463d;
+    background-color: #cac5af;
+}
+.burger{
+    display: none;
 }

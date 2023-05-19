@@ -1,0 +1,32 @@
+<header>
+	<nav>
+		<div class="burger">
+		<label class="burgericon" >☰</label>
+		<p>Menu</p>
+		</div>
+		
+		<ul id="navheader">
+			<li class="liheader">
+				<p class="pictogram">✦</p>
+				<a class="menutitle" href="">ACCUEIL</a>
+			</li>
+			<li class="liheader">
+				<p class="pictogram">❖</p>
+				<a class="menutitle" href="">PROJETS</a>
+			</li>
+			<li class="liheader">
+				<p class="pictogram">〄</p>
+				<a class="menutitle" href="">À PROPOS</a>
+			</li>
+			<li class="liheader">
+				<p class="pictogram">@</p>
+				<a class="menutitle" href="">CONTACT</a>
+			</li>
+			{% if user  %}
+				<li class="liheader">
+					<a class="menutitle" href="/dashboard">DASHBOARD</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
+</header>

@@ -2,6 +2,7 @@ const userRouter = require('express').Router();
 const userModel = require('../models/userModel')
 
 
+
 //afficher login
 userRouter.get('/login', async (req, res) => {
     try {
@@ -19,7 +20,6 @@ userRouter.post('/login', async (req, res) => {
         let user = await userModel.findOne({ mail: req.body.mail , password: req.body.password})
         if (user){
             req.session.userId = user._id
-            console.log("correct");
             res.redirect('/dashboard')
             
         }else{
