@@ -9,7 +9,8 @@ projectRouter.get('/dashboard', authguard, async (req, res) => {
         let project = await projectsModel.find()
         res.render('templates/owner/dashboard.twig',{
             projects: project,
-            user: req.session.owner
+            user: req.session.owner,
+            action: "dashboard",
         })
         
     } catch (error) {
@@ -21,7 +22,9 @@ projectRouter.get('/dashboard', authguard, async (req, res) => {
 //afficher form creation user
 projectRouter.get('/addProject', async (req, res) => {
     try {
-        res.render('templates/owner/createProject.twig')
+        res.render('templates/owner/createProject.twig'),{
+            form: "create",
+        }
     } catch (error) {
         console.log(error);
         res.json(error)
@@ -33,7 +36,7 @@ projectRouter.post('/addProject', async (req, res) => {
     try {
         let project = new projectsModel(req.body)
         await project.save()
-
+        res.redirect('/dashboard')
     }
     catch (error) {
         console.log(error)
@@ -45,8 +48,9 @@ projectRouter.post('/addProject', async (req, res) => {
 projectRouter.get('/updateProject/:id', async (req, res) => {
     try {
         let project = await projectsModel.findOne({ _id: req.params.id })
-        res.render("templates/owner/update.twig",{
-            project: project
+        res.render("templates/owner/createProject.twig",{
+            project: project,
+            form: "update",
         })
     }
     catch (error) {
@@ -76,7 +80,6 @@ projectRouter.get('/deleteProject/:id', async (req, res) =>{
         res.send(error)
     }
 })
-
 
 
 module.exports = projectRouter

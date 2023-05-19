@@ -29,11 +29,7 @@ const projectShema = new mongoose.Schema({
     description:{
         type: String,
         required: [true, "une description est requise"],
-        validate: {
-            validator: function(v){
-                return /^[a-zA-Z0-9àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð : ?!  ,.'-]+$/u.test(v)
-            }
-        }
+        
     },
     image:{
         type: String,

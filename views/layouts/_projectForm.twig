@@ -1,37 +1,38 @@
-<form id="form" {% if project %} action="/updateProject/{{project.id}}" {% else %} action="/addProject" {% endif %} method="POST" class="card">
-			<h2 class="card_header">Nouveau projet</h2>
-			<div class="form__group">
-				<input type="text" name="name" id="name" {% if project %} value="{{project.name}}" {% endif %} class="form__field" placeholder="Nom" required>
-				<label for="name" class="form__label">Nom</label>
-			</div>
-			<div class="form__group">
-				<input type="text" name="url" id="url" {% if project %} value="{{project.url}}" {% endif %} class="form__field" placeholder="Url" required>
-				<label for="url" class="form__label">Url</label>
-			</div>
-			<div class="form__group">
-				<input type="text" name="gitUrl" id="gitUrl" {% if project %} value="{{project.gitUrl}}" {% endif %} class="form__field" placeholder="Urlgit" required>
-				<label for="gitUrl" class="form__label">Url git</label>
-			</div>
-			<div class="form__group">
-				<textarea type="text" name="description" id="description">
-					{% if project %}
-						{{project.description}}
-					{% endif %}
-				</textarea>
-				<label for="description" class="form__label">Description</label>
-			</div>
-			<div class="form__group">
-				<label class="" for="image">Ajouter une image</label>
-				<input type="file" id="image" name="image" {% if project %} value="{{project.image}}" {% endif %} class="">
-			</div>
-			<div class="button_container">
-				<div class="button_wrapper">
-					<button class="button" type="submit">
-						{% if project %}Mettre à jour
-						{% else %}
-							Créer
-						{% endif %}
-					</button>
-				</div>
-			</div>
-		</form>
+<form id="form" {% if project %} action="/updateProject/{{project.id}}" {% else %} action="/addProject" {% endif %} method="POST" class="card onlybox">
+	<h2 class="card_header"> {% if form=='update' %} Update {% else %}Nouveau projet {% endif %}
+	 </h2>
+	<div class="form__group">
+		<input type="text" name="name" id="name" {% if project %} value="{{project.name}}" {% endif %} class="form__field" placeholder="Nom" required>
+		<label for="name" class="form__label">Nom</label>
+	</div>
+	<div class="form__group">
+		<input type="text" name="url" id="url" {% if project %} value="{{project.url}}" {% endif %} class="form__field" placeholder="Url" required>
+		<label for="url" class="form__label">Url</label>
+	</div>
+	<div class="form__group">
+		<input type="text" name="gitUrl" id="gitUrl" {% if project %} value="{{project.gitUrl}}" {% endif %} class="form__field" placeholder="Urlgit" required>
+		<label for="gitUrl" class="form__label">Url git</label>
+	</div>
+	<div class="form__group">
+		<textarea type="text" name="description" id="description">
+			{% if project %}
+				{{project.description}}
+			{% endif %}
+		</textarea>
+		<label for="description" class="form__label">Description</label>
+	</div>
+	<div class="form__group">
+		<label class="" for="image">Ajouter une image</label>
+		<input type="file" id="image" name="image" {% if project %} value="{{project.image}}" {% endif %} class="">
+	</div>
+	<div class="button_container">
+		<div class="button_wrapper">
+			<button class="button" type="submit">
+				{% if project %}Mettre à jour
+				{% else %}
+					Créer
+				{% endif %}
+			</button>
+		</div>
+	</div>
+</form>

@@ -2,7 +2,11 @@
 
 
 {% block main %}
-        {% for project in projects %}
-            {% include "../../layouts/_displayProject.twig" %}
-        {% endfor %}
+    <div id="gridProjects">
+	{% for project in projects %}
+		
+			{% include "../../layouts/_displayProject.twig" %}
+		
+	{% endfor %}
+</div>
 {% endblock %}

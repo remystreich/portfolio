@@ -23,7 +23,7 @@
 				<a class="menutitle" href="">CONTACT</a>
 			</li>
 			{% if user  %}
-				<li class="liheader">
+				<li class="liheader {% if action=='dashboard' %} target {% endif %} ">
 					<a class="menutitle" href="/dashboard">DASHBOARD</a>
 				</li>
 			{% endif %}

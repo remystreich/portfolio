@@ -19,5 +19,5 @@ burger.addEventListener('click', () => {
         document.querySelector('#navheader').style.display = 'none'
         openburger=false
     }
-
 })
+

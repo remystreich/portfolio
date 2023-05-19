@@ -1,27 +1,24 @@
 <div class="card">
-	<h2 class="card_header">
-		{{project.name}}</h2>
-	<p>
-		{{project.url}}
-	</p>
-	<p>
-		{{project.gitUrl}}
-	</p>
-	<p>
-		{{project.description}}
-	</p>
-    	<p>
-		{{project.id}}
-	</p>
-	<img>
-	{{project.image}}
-</img>
-<div class="">
-	<a href="/updateProject/{{project.id}}">
-		<button>Modifier</button>
-	</a>
-	<a href="deleteProject/{{project.id}}">
-		<button>Supprimer</button>
-	</a>
-
+	<h2 class="card_header">{{project.name}}</h2>
+	<p>{{project.url}}</p>
+	<p>{{project.gitUrl}}</p>
+	<p>{{project.description}}</p>
+	<p>{{project.id}}</p>
+	<img>{{project.image}}</img>
+	<div class="btn-bar">
+		<div class="button_container">
+			<div class="button_wrapper">
+				<a href="/updateProject/{{project.id}}">
+					<button class="button">Modifier</button>
+				</a>
+			</div>
+		</div>
+		<div class="button_container">
+			<div class="button_wrapper">
+				<a href="deleteProject/{{project.id}}">
+					<button class="button">Supprimer</button>
+				</a>
+			</div>
+		</div>
+	</div>
 </div>
