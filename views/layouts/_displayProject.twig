@@ -1,10 +1,20 @@
 <div class="card">
 	<h2 class="card_header">{{project.name}}</h2>
-	<p>{{project.url}}</p>
-	<p>{{project.gitUrl}}</p>
-	<p>{{project.description}}</p>
-	<p>{{project.id}}</p>
-	<img>{{project.image}}</img>
+	<article>
+		<h4>Lien:</h4>
+		<p>{{project.url}}</p>
+	</article>
+	<article>
+		<h4>Lien git:</h4>
+		<p> {{project.gitUrl}}</p>
+	</article>
+	<article>
+		<h4>Description:</h4>
+		<p>{{project.description}}</p>
+	</article>
+	<div class="imgContainer">
+		<img src="/img/uploads/{{project.image}}"></img>
+	</div>
 	<div class="btn-bar">
 		<div class="button_container">
 			<div class="button_wrapper">

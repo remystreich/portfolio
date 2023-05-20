@@ -1,18 +1,19 @@
-const projectRouter =  require('express').Router()
+const projectRouter = require('express').Router()
 const projectsModel = require('../models/projectsModel')
 const authguard = require("../services/authguard")
+const upload = require('../services/multer')
+const fs = require('fs');
 
 //afficher dashboard owner
-projectRouter.get('/dashboard', authguard, async (req, res) => {
+projectRouter.get('/dashboard', /* authguard, */ async (req, res) => {
     try {
-        console.log(req.session)
         let project = await projectsModel.find()
-        res.render('templates/owner/dashboard.twig',{
+        res.render('templates/owner/dashboard.twig', {
             projects: project,
             user: req.session.owner,
             action: "dashboard",
         })
-        
+
     } catch (error) {
         console.log(error);
         res.send(error)
@@ -22,7 +23,7 @@ projectRouter.get('/dashboard', authguard, async (req, res) => {
 //afficher form creation user
 projectRouter.get('/addProject', async (req, res) => {
     try {
-        res.render('templates/owner/createProject.twig'),{
+        res.render('templates/owner/createProject.twig'), {
             form: "create",
         }
     } catch (error) {
@@ -32,9 +33,10 @@ projectRouter.get('/addProject', async (req, res) => {
 })
 
 //créer un nouveau projet
-projectRouter.post('/addProject', async (req, res) => {
+projectRouter.post('/addProject', upload.single('image'), async (req, res) => {
     try {
         let project = new projectsModel(req.body)
+        project.image = req.file.filename;
         await project.save()
         res.redirect('/dashboard')
     }
@@ -48,7 +50,7 @@ projectRouter.post('/addProject', async (req, res) => {
 projectRouter.get('/updateProject/:id', async (req, res) => {
     try {
         let project = await projectsModel.findOne({ _id: req.params.id })
-        res.render("templates/owner/createProject.twig",{
+        res.render("templates/owner/createProject.twig", {
             project: project,
             form: "update",
         })
@@ -60,9 +62,11 @@ projectRouter.get('/updateProject/:id', async (req, res) => {
 })
 
 //modifier le projet
-projectRouter.post('/updateProject/:id', async (req, res) => {  
+projectRouter.post('/updateProject/:id', upload.single('image'), async (req, res) => {
     try {
-        let project = await projectsModel.updateOne({ _id: req.params.id }, req.body)
+        let project = await projectsModel.findOne({ _id: req.params.id })
+        project.image = req.file.filename;
+        await project.save()
         res.redirect('/dashboard')
     } catch (error) {
         console.log(error)
@@ -71,8 +75,23 @@ projectRouter.post('/updateProject/:id', async (req, res) => {
 })
 
 //supprimer un projet
-projectRouter.get('/deleteProject/:id', async (req, res) =>{
+projectRouter.get('/deleteProject/:id', async (req, res) => {
     try {
+        // Récupérer les informations du projet
+        let project = await projectsModel.findOne({ _id: req.params.id });
+
+        // Vérifier si le projet a une image associée
+        if (project.image) {
+            // Supprimer le fichier d'image
+            fs.unlink(`views/assets/img/uploads/${project.image}`, (err) => {
+                if (err) {
+                    console.error('Erreur lors de la suppression du fichier :', err);
+                    // Gérer l'erreur de suppression du fichier
+                } else {
+                    console.log('Fichier supprimé avec succès');
+                }
+            });
+        }
         await projectsModel.deleteOne({ _id: req.params.id })
         res.redirect('/dashboard')
     } catch (error) {

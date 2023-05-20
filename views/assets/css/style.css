@@ -46,9 +46,9 @@ body {
 }
 
 .containerbody {
+    min-width: 100vw;
     min-height: 100vh;
     background-color: #cac5afe0;
-    width: 100%;
     background-size: cover;
     position: absolute;
 }
@@ -65,12 +65,13 @@ body {
     background: #cac5af;
     box-shadow: 2px 2px 2px 2px #a09e89;
     border-radius: 1px;
-    
+
 }
 
 .card > * {
     margin-bottom: 20px;
     padding:0px 20px;
+    
 }
 .card_header{
     color: #d7d1b8;
@@ -158,6 +159,7 @@ body {
 .button_container{
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 
 .button_wrapper{
@@ -192,7 +194,6 @@ body {
 
 .btn-bar{
     display: flex;
-    justify-content: space-around;
 }
 /****footer******************************************************************************************************/
  
@@ -215,7 +216,7 @@ footer{
     border-top: 3px solid #444239 ;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .borderlogo{
     border-left: #444239 solid 6px;
@@ -290,17 +291,30 @@ footer{
     background-color: #cac5af;
 }
 
+
+
 #gridProjects{
     padding: 30px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
-    grid-auto-rows: 400px;
+
   }
-.card p {
-    word-wrap: break-word;
-    font-size: 14px;
-}
+
+
 .onlybox{
     width: 400px
   }
+.card div img{
+    margin: auto;
+    max-width: 100%;
+}
+.imgContainer{
+    margin-top: 15px;
+}
+
+h1{
+    margin-left: 40px;
+    font-size: 50px;
+    text-shadow:7px 7px 2px #a19c8d;
+}
