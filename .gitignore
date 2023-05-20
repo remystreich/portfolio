@@ -1,4 +1,4 @@
 node_modules
 .env
-view/asset/img/uploads/
+views/assets/img/uploads
 
