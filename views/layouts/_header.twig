@@ -6,19 +6,19 @@
 		</div>
 		
 		<ul id="navheader">
-			<li class="liheader">
+			<li class="liheader {% if action=='lobby' %} target {% endif %}">
 				<p class="pictogram">✦</p>
 				<a class="menutitle" href="">ACCUEIL</a>
 			</li>
-			<li class="liheader">
+			<li class="liheader {% if action=='projects' %} target {% endif %}">
 				<p class="pictogram">❖</p>
 				<a class="menutitle" href="">PROJETS</a>
 			</li>
-			<li class="liheader">
+			<li class="liheader {% if action=='about' %} target {% endif %}">
 				<p class="pictogram">〄</p>
 				<a class="menutitle" href="">À PROPOS</a>
 			</li>
-			<li class="liheader">
+			<li class="liheader {% if action=='contact' %} target {% endif %}">
 				<p class="pictogram">@</p>
 				<a class="menutitle" href="">CONTACT</a>
 			</li>

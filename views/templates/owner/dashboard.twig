@@ -3,7 +3,9 @@
 
 {% block main %}
 <h1>DASHBOARD</h1>
-<a href="/addProject">Ajouter un nouveau projet</a>
+<div class="actionbutton">
+<a href="/addProject" >Ajouter un nouveau projet</a>
+</div>
     <div id="gridProjects">
 	{% for project in projects %}
 		

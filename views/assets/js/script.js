@@ -1,8 +1,10 @@
 function height() {
-    let pageHeight = document.querySelector('.containerbody').clientHeight;
-    let pageWidth = document.querySelector('.containerbody').clientWidth;
+    let body = document.querySelector('.containerbody')
+    let pageHeight = body.clientHeight;
+    let pageWidth = body.clientWidth;
     document.querySelector('.mesh').style.height = pageHeight + 'px';
     document.querySelector('.mesh').style.width = pageWidth + 'px';
+    console.log(pageHeight);
 }
 height()
 window.addEventListener('scroll', ()=> { height()})
@@ -22,4 +24,3 @@ burger.addEventListener('click', () => {
         openburger = false
     }
 })
-

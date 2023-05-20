@@ -5,15 +5,14 @@ const upload = require('../services/multer')
 const fs = require('fs');
 
 //afficher dashboard owner
-projectRouter.get('/dashboard', /* authguard, */ async (req, res) => {
+projectRouter.get('/dashboard', authguard,  async (req, res) => {
     try {
         let project = await projectsModel.find()
         res.render('templates/owner/dashboard.twig', {
             projects: project,
-            user: req.session.owner,
+            //user: req.session.owner,
             action: "dashboard",
         })
-
     } catch (error) {
         console.log(error);
         res.send(error)
@@ -21,10 +20,11 @@ projectRouter.get('/dashboard', /* authguard, */ async (req, res) => {
 })
 
 //afficher form creation user
-projectRouter.get('/addProject', async (req, res) => {
+projectRouter.get('/addProject', authguard, async (req, res) => {
     try {
         res.render('templates/owner/createProject.twig'), {
             form: "create",
+            action: "dashboard",
         }
     } catch (error) {
         console.log(error);
@@ -33,7 +33,7 @@ projectRouter.get('/addProject', async (req, res) => {
 })
 
 //créer un nouveau projet
-projectRouter.post('/addProject', upload.single('image'), async (req, res) => {
+projectRouter.post('/addProject', authguard, upload.single('image'), async (req, res) => {
     try {
         let project = new projectsModel(req.body)
         if (req.file){
@@ -52,12 +52,13 @@ projectRouter.post('/addProject', upload.single('image'), async (req, res) => {
 })
 
 //afficher un projet avant de le modifier
-projectRouter.get('/updateProject/:id', async (req, res) => {
+projectRouter.get('/updateProject/:id', authguard, async (req, res) => {
     try {
         let project = await projectsModel.findOne({ _id: req.params.id })
         res.render("templates/owner/createProject.twig", {
             project: project,
             form: "update",
+            action: "dashboard",
         })
     }
     catch (error) {
@@ -67,7 +68,7 @@ projectRouter.get('/updateProject/:id', async (req, res) => {
 })
 
 //modifier le projet
-projectRouter.post('/updateProject/:id', upload.single('image'), async (req, res) => {
+projectRouter.post('/updateProject/:id', authguard, upload.single('image'), async (req, res) => {
     try {
         let project = await projectsModel.findOne({ _id: req.params.id })
         let update = req.body
@@ -94,7 +95,7 @@ projectRouter.post('/updateProject/:id', upload.single('image'), async (req, res
 })
 
 //supprimer un projet
-projectRouter.get('/deleteProject/:id', async (req, res) => {
+projectRouter.get('/deleteProject/:id', authguard, async (req, res) => {
     try {
         // Récupérer les informations du projet
         let project = await projectsModel.findOne({ _id: req.params.id });

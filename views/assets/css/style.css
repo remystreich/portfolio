@@ -19,7 +19,7 @@
     text-decoration: none;
     color: #444239;
     list-style: none;
-    animation: blur ease 300ms 1 normal forwards; 
+    
 }
 @keyframes blur {
     0% {
@@ -32,6 +32,11 @@
         filter: blur(px);
     }
   }
+  @keyframes flipiny {
+    0%{ opacity: 0; transform: perspective(400px) rotateY(90deg); }
+   
+    100%{ opacity: 1; transform: perspective(400px) rotateY(0deg); }
+    }
 
 .mesh {
     background-image: url('../img/mesh.001.png');
@@ -51,20 +56,19 @@ body {
     background-color: #cac5afe0;
     background-size: cover;
     position: absolute;
+    animation: flipiny 500ms ease  1 normal forwards; 
 }
 
 .containerCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto
-    ;
+    width: 400px;
+    margin: auto;
 }
 
 .card {
     background: #cac5af;
     box-shadow: 2px 2px 2px 2px #a09e89;
     border-radius: 1px;
+    
 
 }
 
@@ -227,10 +231,12 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
 }
 .borderlogo div{
     padding-top: 16px;
+    font-family: rodinbold;
 }
 
 /***************HEADER ************************************************************************************/
@@ -249,6 +255,7 @@ footer{
 }
 .liheader:hover{
     background-color:#48463d;
+    transition: 300ms ease-in;
 }
 
 .menutitle{
@@ -257,6 +264,7 @@ footer{
 }
 .liheader:hover .menutitle{
       color: #cac5afe0;
+      transition: 300ms ease-in;
 }
 .pictogram{
     color: #b3ae9a;
@@ -273,6 +281,7 @@ footer{
 .liheader:hover .pictogram{
     color: #48463d;
     background-color: #cac5af;
+    transition: 300ms ease-in;
 }
 .burger{
     display: none;
@@ -303,7 +312,7 @@ footer{
 
 
 .onlybox{
-    width: 400px
+    margin: 0px 30px;
   }
 .card div img{
     margin: auto;
@@ -316,5 +325,18 @@ footer{
 h1{
     margin-left: 40px;
     font-size: 50px;
-    text-shadow:7px 7px 2px #a19c8d;
+    text-shadow:8px 8px 2px #a19c8d;
+    letter-spacing: 8px;
+}
+.actionbutton{
+    display: flex;
+}
+.actionbutton a{
+    margin: auto;
+    font-size: 16px;
+    background: #cac5af;
+    box-shadow: 2px 2px 2px 2px #a09e89;
+    color: #005B47;
+    padding: 5px;
+    font-family: rodinbold;
 }
