@@ -1,5 +1,5 @@
 <form id="form" {% if project %} action="/updateProject/{{project.id}}" {% else %} action="/addProject" {% endif %} method="POST" class="card onlybox" enctype="multipart/form-data">
-	<h2 class="card_header"> {% if form=='update' %} Update {% else %}Nouveau projet {% endif %}
+	<h2 class="card_header"> {% if project %} Update {% else %}Nouveau projet {% endif %}
 	 </h2>
 	<div class="form__group">
 		<input type="text" name="name" id="name" {% if project %} value="{{project.name}}" {% endif %} class="form__field" placeholder="Nom" required>
