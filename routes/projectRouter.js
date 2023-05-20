@@ -36,7 +36,12 @@ projectRouter.get('/addProject', async (req, res) => {
 projectRouter.post('/addProject', upload.single('image'), async (req, res) => {
     try {
         let project = new projectsModel(req.body)
-        project.image = req.file.filename;
+        if (req.file){
+            project.image = req.file.filename;
+        }
+        else{
+            project.image = ""
+        }
         await project.save()
         res.redirect('/dashboard')
     }
@@ -65,8 +70,22 @@ projectRouter.get('/updateProject/:id', async (req, res) => {
 projectRouter.post('/updateProject/:id', upload.single('image'), async (req, res) => {
     try {
         let project = await projectsModel.findOne({ _id: req.params.id })
-        project.image = req.file.filename;
-        await project.save()
+        let update = req.body
+        if (req.file){
+            if (project.image) {
+                // Supprimer le fichier d'image
+                fs.unlink(`views/assets/img/uploads/${project.image}`, (err) => {
+                    if (err) {
+                        console.error('Erreur lors de la suppression du fichier :', err);
+                        // Gérer l'erreur de suppression du fichier
+                    } else {
+                        console.log('Fichier supprimé avec succès');
+                    }
+                });
+            }
+            update.image = req.file.filename
+        }
+        await project.updateOne(update)
         res.redirect('/dashboard')
     } catch (error) {
         console.log(error)
