@@ -1,0 +1,9 @@
+<div class="list">
+    <div class="listwraper">
+        {% for project in projects %}
+            <div class="projectswrapper">
+                <h3 class="projects"  onclick='displayproject({{ project | json_encode()}})'> ❖ {{project.name}}</h3>
+            </div>
+        {% endfor %}
+    </div>
+</div>

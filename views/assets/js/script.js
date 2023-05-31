@@ -24,3 +24,16 @@ burger.addEventListener('click', () => {
         openburger = false
     }
 })
+
+function displayproject(e){
+    let git = document.getElementById('projectGit')
+    let url = document.getElementById('projectUrl')
+    let description = document.getElementById('projectDescription')
+    let project = e._doc
+    let img = document.getElementById('projectimg')
+    img.src = "/img/uploads/"+ project.image
+    git.innerText= "URL github : "+project.gitUrlurl
+    url.innerText= "URL : "+project.url
+    description.innerText= project.description
+    document.getElementById('projectInformation').style.display = 'block'
+}

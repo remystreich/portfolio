@@ -3,6 +3,12 @@
         background-image: url('../img/bgresp.jpeg');
     }
 
+    main h1{
+        margin-left: 20px;
+        font-size: 35px;
+        text-shadow:7px 7px 2px #a19c8d;
+    }
+    
     #copyright {
         margin: 5px;
     }
@@ -58,6 +64,60 @@
       .onlybox{
         width: auto;
       }
+
+    #lobby{
+        display: block;
+        margin: 0px;
+    }
+    #lobby div {
+      display: flex;
+    }
+    #lobby div img{
+        width: 320px;
+        margin: auto;
+    }
+    #lobby article h1{
+        font-size: 30px;
+        margin: 0;
+    }
+    #lobby article{
+        padding-top: 20px;
+        padding-left: 9px;
+    }
+    #lobby article h2{
+        font-size: 25px;
+        margin: 0;
+        padding-left: 0px;
+    }
+    #lobby article h3{
+        font-size: 20px;
+        margin: 0;
+        padding-left: 0px;
+    }
+
+    #displayprojects{
+        display: block; 
+    }
+    .list {
+        margin: 10px;
+        max-width: 100%;
+    }
+    #projectimg{
+        max-width: 95%;
+        margin: 5px;
+    }
+    #projectInformation{
+        margin: 5px;
+    }
+
+    #contactForm{
+        width: 95%;
+        margin: auto;
+     }
+     #contactInfo{
+        display: block;
+        
+    }
 }
 
 @keyframes flipinx {

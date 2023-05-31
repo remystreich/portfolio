@@ -65,11 +65,13 @@ body {
 }
 
 .card {
-    background: #cac5af;
+    background: #d6d0b8;
     box-shadow: 2px 2px 2px 2px #a09e89;
     border-radius: 1px;
-    
-
+    padding-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .card > * {
@@ -79,7 +81,7 @@ body {
 }
 .card_header{
     color: #d7d1b8;
-    background-color: #48463d;
+    background-color: #48463de0;
     padding:0px 20px;
 }
 /***************** inputs ************************************************************************************************************************/
@@ -146,7 +148,7 @@ body {
 
 .button{
     color: #d7d1b8;
-    background-color: #48463d;
+    background-color: #48463de0;
     font-size: 13px;
     border-radius: 1px;
     padding: 2px 13px;
@@ -167,8 +169,8 @@ body {
 }
 
 .button_wrapper{
-    border-top: solid #48463d 3px;
-    border-bottom: solid #48463d 3px;
+    border-top: solid #48463de0 3px;
+    border-bottom: solid #48463de0 3px;
     padding: 4px 0px ;
     display: flex;
     justify-content: center;
@@ -248,13 +250,13 @@ footer{
 }
 .liheader{
     margin-bottom: 11px;
-    background-color: #b3ae9a;
+    background-color: #a7a28e91;
     display: flex;
     align-items: center;
     height: 30px;
 }
 .liheader:hover{
-    background-color:#48463d;
+    background-color:#48463de0;
     transition: 300ms ease-in;
 }
 
@@ -268,7 +270,7 @@ footer{
 }
 .pictogram{
     color: #b3ae9a;
-    background-color: #48463d;
+    background-color: #48463de0;
     font-size: 20px;
     margin-right: 5px;
     margin: 4px;
@@ -279,7 +281,7 @@ footer{
     justify-content: center;
 }
 .liheader:hover .pictogram{
-    color: #48463d;
+    color: #48463de0;
     background-color: #cac5af;
     transition: 300ms ease-in;
 }
@@ -290,13 +292,13 @@ footer{
 .target{
     margin-bottom: 0px;
     height: 45px;
-    background-color: #48463d;
+    background-color: #48463de0;
 }
 .target .menutitle{
     color: #cac5afe0;
 }
 .target .pictogram{
-    color: #48463d;
+    color: #48463de0;
     background-color: #cac5af;
 }
 
@@ -322,11 +324,12 @@ footer{
     margin-top: 15px;
 }
 
-h1{
+main h1{
     margin-left: 40px;
     font-size: 50px;
     text-shadow:8px 8px 2px #a19c8d;
     letter-spacing: 8px;
+    text-transform: uppercase;
 }
 .actionbutton{
     display: flex;
@@ -339,4 +342,121 @@ h1{
     color: #005B47;
     padding: 5px;
     font-family: rodinbold;
+}
+
+
+/***********page projets******************************************************/
+
+#displayprojects{
+    display: flex;
+}
+
+.list {
+    border-left: solid 10px #a7a28e91;
+    margin: 20px;
+    flex: 1;
+    max-width: 30%;
+}
+.listwraper{
+    border-left: solid 3px #a7a28e91;
+    padding:0px 20px;
+    margin-left: 5px;
+}
+
+.projects{
+    background-color:#a7a28e91;
+    padding: 0px 8px;
+    
+}
+
+.projects:hover{
+    background-color: #48463de0;
+    color: #cac5af ;
+}
+.projects:focus{
+    background-color: #48463de0;
+    color: #cac5af ;
+}
+
+.projectswrapper{
+    border: transparent 3px;
+    padding: 3px 0px;
+}
+
+.projectswrapper:hover{
+    border-top: solid 3px  #48463de0;
+    border-bottom: solid 3px  #48463de0;
+}
+#projectimg{
+    width: 500px;
+    flex: 1;
+    margin-top: 20px;
+}
+#projectInformation{
+    flex: 1;
+    margin: 20px;
+    display: none;
+}
+#projectInformation p{
+    border-bottom: solid 3px #a7a28e91;
+    padding: 0;
+    margin: 20px;
+}
+
+/***********************ACCUEIL**********************************/
+#lobby{
+    display: flex;
+    margin: 100px;
+}
+#lobby div img{
+    opacity: 0.7;
+}
+#lobby article h1{
+    font-size: 70px;
+    margin: 0;
+}
+#lobby article{
+    padding-top: 100px;
+    padding-left: 30px;
+}
+#lobby article h2{
+    font-size: 40px;
+    margin: 0;
+    padding-left: 50px;
+}
+#lobby article h3{
+    font-size: 25px;
+    margin: 0;
+    padding-left: 50px;
+}
+
+#contactForm{
+   width: 80%;
+   margin: auto;
+}
+textarea{
+    margin-top: 10px;
+    width: 100%;
+    height: 200px;
+    background-color: #e4dfc8 ;
+    border: solid #48463de0 2px ;
+    border-radius: 2px;
+    font-size: 16px;
+}
+#contactInfo{
+    display: flex;
+    justify-content: space-around;
+}
+.card a{
+    display: flex;
+}
+a img{
+    max-height: 400px;
+    margin: auto ;
+}
+#contactInfo .card{
+    margin: 30px;
+}
+#contactInfo .card *{
+    border-bottom: solid 3px #a7a28e91;
 }

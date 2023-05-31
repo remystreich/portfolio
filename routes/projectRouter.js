@@ -87,7 +87,7 @@ projectRouter.post('/updateProject/:id', authguard, upload.single('image'), asyn
 //supprimer un projet
 projectRouter.get('/deleteProject/:id', authguard, async (req, res) => {
     try {
-        let project = await projectsModel.findOne({ _id: req.params.id });         // Récupérer les informations du projet
+        let project = await projectsModel.findOne({ _id: req.params.id });         // Récupérer les informations du projetno
         // Vérifier si le projet a une image associée
         if (project.image) {
             // Supprimer le fichier d'image
@@ -104,6 +104,20 @@ projectRouter.get('/deleteProject/:id', authguard, async (req, res) => {
         res.redirect('/dashboard')
     } catch (error) {
         console.log(error)
+        res.send(error)
+    }
+})
+
+//afficher page projects
+projectRouter.get('/projects',  async (req, res) => {
+    try {
+        let project = await projectsModel.find()
+        res.render('templates/visitor/projects.twig', {
+            projects: project,       //envoie la liste de projet de la bdd au front
+            action: "projects",     //surbrillance de l'onglet
+        })
+    } catch (error) {
+        console.log(error);
         res.send(error)
     }
 })

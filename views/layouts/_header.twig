@@ -8,19 +8,19 @@
 		<ul id="navheader">
 			<li class="liheader {% if action=='lobby' %} target {% endif %}">
 				<p class="pictogram">✦</p>
-				<a class="menutitle" href="">ACCUEIL</a>
+				<a class="menutitle" href="/">ACCUEIL</a>
 			</li>
 			<li class="liheader {% if action=='projects' %} target {% endif %}">
 				<p class="pictogram">❖</p>
-				<a class="menutitle" href="">PROJETS</a>
+				<a class="menutitle" href="/projects">PROJETS</a>
 			</li>
 			<li class="liheader {% if action=='about' %} target {% endif %}">
 				<p class="pictogram">〄</p>
-				<a class="menutitle" href="">À PROPOS</a>
+				<a class="menutitle" href="/about">À PROPOS</a>
 			</li>
 			<li class="liheader {% if action=='contact' %} target {% endif %}">
 				<p class="pictogram">@</p>
-				<a class="menutitle" href="">CONTACT</a>
+				<a class="menutitle" href="/contact">CONTACT</a>
 			</li>
 			{% if user  %}
 				<li class="liheader {% if action=='dashboard' %} target {% endif %} ">

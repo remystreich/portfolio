@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const session = require('express-session')
 const projectRouter = require('./routes/projectRouter');
 const userRouter = require('./routes/userRouter');
+const pagesRouter = require('./routes/pagesRouter');
 require('dotenv').config()
 
 const app = express()
@@ -17,6 +18,7 @@ app.use(session({
 }));
 app.use(express.urlencoded({ extended: true }))
 app.use(projectRouter)
+app.use(pagesRouter)
 app.use('/user', userRouter)
 
 //  app.all('*', (req, res)=> {

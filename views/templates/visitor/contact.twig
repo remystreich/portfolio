@@ -1,0 +1,18 @@
+{% extends "../../base.twig" %}
+{% block main %}
+<h1>Contact</h1>
+<div id="contactInfo">
+    <article class="card">
+        <h2 class="card_header">Coordonnées</h2>
+        <a href="mailto:remystreich@gmail.com">remystreich@gmail.com</a>
+        <a href="tel:+33681168749">06.81.16.87.49</a>
+        <a href="https://www.linkedin.com/in/rémy-streichemberger-891322252?original_referer=">Linkedin </a>
+        <a href="https://github.com/remystreich">Github</a>
+    </article>
+    <div class="card">
+        <h2 class="card_header">Mon CV</h2>
+        <a href="/img/CV.pdf"><img src="/img/CV.001.png" alt="cv"></a>
+    </div>
+</div>
+{% include "../../layouts/_contactForm.twig" %}
+{% endblock %}

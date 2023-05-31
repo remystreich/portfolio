@@ -1,0 +1,27 @@
+<div id="contactForm">
+	<form action="/contact" method="post" class="card ">
+		<h2 class="card_header">Formulaire de Contact</h2>
+		<div class="form__group">
+			<input type="text" name="mail" id="mail" class="form__field" placeholder="email" required>
+			<label for="mail" class="form__label">Email</label>
+		</div>
+        <div class="form__group">
+			<input type="text" name="name" id="name" class="form__field" placeholder="nom" required>
+			<label for="name" class="form__label">Nom</label>
+		</div>
+        <div class="form__group">
+			<input type="text" name="objet" id="objet" class="form__field" placeholder="nom" required>
+			<label for="objet" class="form__label">Objet</label>
+		</div>
+       <div class="form__group">
+            <textarea type="text" name="description" id="description"></textarea>
+            <label for="description" class="form__label">Votre message</label>
+	    </div>
+	
+		<div class="button_container">
+			<div class="button_wrapper">
+				<button class="button" type="submit">Valider</button>
+			</div>
+		</div>
+	</form>
+</div>
