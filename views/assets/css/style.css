@@ -457,6 +457,6 @@ a img{
 #contactInfo .card{
     margin: 30px;
 }
-#contactInfo .card *{
+#contactInfo article *{
     border-bottom: solid 3px #a7a28e91;
 }

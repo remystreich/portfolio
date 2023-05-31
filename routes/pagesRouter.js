@@ -33,6 +33,7 @@ pagesRouter.get('/contact', async (req, res) => {
     try {
         res.render('templates/visitor/contact.twig', {
             action: "contact",
+            successMessage: req.session.successMessage 
         })
 
     } catch (error) {
@@ -48,10 +49,13 @@ pagesRouter.post('/contact', async (req, res) => {
             from: 'remystreich@gmail.com',  
             to: 'remystreich@gmail.com',  
             subject: 'Portfolio',  
-            text: req.body
+            text: `Vous avez reçu un email de ${req.body.mail} / ${req.body.name}.
+            Objet: ${req.body.objet}.
+            ${req.body.description}`
           };
-          console.log(mail);
         transporter.sendMail(mail)
+        req.session.successMessage = 'Votre e-mail a été envoyé avec succès!';
+        res.redirect('/contact')
     } catch (error) {
         console.log(error);
         res.json(error)
