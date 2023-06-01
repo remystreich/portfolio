@@ -4,11 +4,7 @@ const projectShema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, "le titre est requis"],
-        validate: {
-            validator: function(v){
-                return /^[a-zA-Z0-9àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u.test(v)
-            }
-        }
+        
     },
     url:{
         type: String,
@@ -33,6 +29,9 @@ const projectShema = new mongoose.Schema({
     },
     image:{
         type: String,
+    },
+    date:{
+        type: Date,
     }
 })
 

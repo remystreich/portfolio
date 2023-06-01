@@ -6,6 +6,7 @@ const transporter = require('../services/nodemailer')
 pagesRouter.get('/', async (req, res) => {
     try {
         res.render('templates/visitor/lobby.twig', {
+            user: req.session.owner,
             action: "lobby",
         })
 
@@ -19,6 +20,7 @@ pagesRouter.get('/', async (req, res) => {
 pagesRouter.get('/about', async (req, res) => {
     try {
         res.render('templates/visitor/about.twig', {
+            user: req.session.owner,
             action: "about",
         })
 
@@ -32,6 +34,7 @@ pagesRouter.get('/about', async (req, res) => {
 pagesRouter.get('/contact', async (req, res) => {
     try {
         res.render('templates/visitor/contact.twig', {
+            user: req.session.owner,
             action: "contact",
             successMessage: req.session.successMessage 
         })

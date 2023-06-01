@@ -387,9 +387,12 @@ main h1{
     border-top: solid 3px  #48463de0;
     border-bottom: solid 3px  #48463de0;
 }
+#imgcontainer{
+    flex: 2;
+}
 #projectimg{
-    width: 500px;
-    flex: 1;
+    width: 100%;
+    height: auto;
     margin-top: 20px;
 }
 #projectInformation{
@@ -398,6 +401,11 @@ main h1{
     display: none;
 }
 #projectInformation p{
+    border-bottom: solid 3px #a7a28e91;
+    padding: 0;
+    margin: 20px;
+}
+#projectInformation a{
     border-bottom: solid 3px #a7a28e91;
     padding: 0;
     margin: 20px;
@@ -436,7 +444,7 @@ main h1{
 }
 textarea{
     margin-top: 10px;
-    width: 100%;
+    width: 590px;
     height: 200px;
     background-color: #e4dfc8 ;
     border: solid #48463de0 2px ;
@@ -460,3 +468,86 @@ a img{
 #contactInfo article *{
     border-bottom: solid 3px #a7a28e91;
 }
+
+.globe {
+    perspective: 2000px;
+    animation: rotate 30s infinite linear;
+    transform-style: preserve-3d;
+    width: 300px;
+    
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+      
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  #opacity{
+    position: absolute;
+  top: 50%;
+  left: -70%;
+  transform: translate(-50%, -50%) ;
+  width: 800px;
+  height: 200px;
+  background-color: #cac5af28;
+  animation: antirotate 30s infinite linear;
+}
+@keyframes antirotate {
+    from {
+        
+        transform: rotateY(360deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+  }
+    
+  .globe i {
+    position: absolute;
+
+    transform-style: preserve-3d;
+    
+    
+  }
+  .globe i:nth-child(1) {
+    transform:  rotateY(0deg) translateZ(300px);
+    top: 50%;
+    
+  }
+  .globe i:nth-child(2) {
+    transform:  rotateY(51deg) translateZ(300px);
+    top: 50%;
+  }
+  .globe i:nth-child(3) {
+    transform:  rotateY(102deg) translateZ(300px);
+    top: 50%;
+  }
+  .globe i:nth-child(4) {
+    transform: rotateY(153deg) translateZ(300px);
+    top: 50%;
+  }
+  .globe i:nth-child(5) {
+    transform:  rotateY(204deg) translateZ(300px);
+    top: 50%;
+  }
+  .globe i:nth-child(6) {
+    transform:  rotateY(256deg) translateZ(300px);
+    top:50%;
+  }
+  .globe i:nth-child(7) {
+    transform: rotateY(308deg) translateZ(300px);
+    top: 50%;
+  }
+  
+  
+ #globecontainer{
+    position: absolute;
+     top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }

@@ -1,4 +1,5 @@
 const projectRouter = require('express').Router()
+const { log } = require('console');
 const projectsModel = require('../models/projectsModel')
 const authguard = require("../services/authguard")
 const upload = require('../services/multer')
@@ -22,7 +23,8 @@ projectRouter.get('/dashboard', authguard,  async (req, res) => {
 //afficher form creation user
 projectRouter.get('/addProject', authguard, async (req, res) => {
     try {
-        res.render('templates/owner/createProject.twig'), {              
+        res.render('templates/owner/createProject.twig'), {   
+            user: req.session.owner,           
             action: "dashboard",            //surbrillance de l'onglet
         }
     } catch (error) {
@@ -112,8 +114,13 @@ projectRouter.get('/deleteProject/:id', authguard, async (req, res) => {
 projectRouter.get('/projects',  async (req, res) => {
     try {
         let project = await projectsModel.find()
+        // Tri des produits par date croissante
+        let croissantProjects = project.sort((a, b) => new Date(a.date) - new Date(b.date));
+        // Tri des produits par date décroissante
+        let decroissantProjects = project.sort((a, b) => new Date(b.date) - new Date(a.date));
         res.render('templates/visitor/projects.twig', {
-            projects: project,       //envoie la liste de projet de la bdd au front
+            user: req.session.owner,
+            projects: croissantProjects,       //envoie la liste de projet de la bdd au front
             action: "projects",     //surbrillance de l'onglet
         })
     } catch (error) {

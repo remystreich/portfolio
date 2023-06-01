@@ -14,17 +14,18 @@
 		<label for="gitUrl" class="form__label">Url git</label>
 	</div>
 	<div class="form__group">
-		<textarea type="text" name="description" id="description">
-			{% if project %}
-				{{project.description}}
-			{% endif %}
-		</textarea>
+		<textarea type="text" name="description" id="description">{% if project %}{{project.description}}{% endif %}</textarea>
 		<label for="description" class="form__label">Description</label>
 	</div>
 	<div class="form__group">
 		<label class="" for="image">{% if project %} Remplacer l'image {% else %}  Ajouter une image {% endif %}</label>
 		<input type="file" id="image" name="image"  class="">
 	</div>
+	<div class="form__group">
+		<input type="date" name="date" id="date" {% if project %} value="{{project.date|date("Y-m-d")}}" {% endif %} onchange='test(this)' class="form__field" placeholder="date">
+		<label for="date" class="form__label">date</label>
+	</div>
+	
 	<div class="button_container">
 		<div class="button_wrapper">
 			<button class="button" type="submit">
