@@ -41,6 +41,4 @@ function displayproject(e){
     document.getElementById('projectInformation').style.display = 'block';
 }
 
-function test(e){
-    console.log(e.value);
-}
+

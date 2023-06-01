@@ -2,7 +2,10 @@
 
 {% block main %}
     <h1>Mes projets</h1>
-    <form action=""></form>
+     <select id="sortSelector" >
+            <option value="asc">Trier par date croissante</option>
+            <option value="desc">Trier par date décroissante</option>
+        </select>
     <div id="displayprojects">
         {% include "../../layouts/_listProjects.twig" %}   
         {% include "../../layouts/_projectdetail.twig" %}

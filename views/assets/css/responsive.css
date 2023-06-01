@@ -118,6 +118,17 @@
         display: block;
         
     }
+
+    #about{
+        background: #d6d0b8;
+        margin: 10px;
+        box-shadow: 2px 2px 2px 2px #a09e89;
+        border-radius: 1px;
+     }
+
+     #about p{
+        margin:  20px 20px;
+     }
 }
 
 @keyframes flipinx {

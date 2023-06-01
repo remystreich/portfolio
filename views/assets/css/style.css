@@ -470,10 +470,10 @@ a img{
 }
 
 .globe {
-    perspective: 2000px;
-    animation: rotate 30s infinite linear;
+    perspective: 4000px;
+    animation: rotate 45s infinite linear;
     transform-style: preserve-3d;
-    width: 300px;
+    width: 0px;
     
   }
   
@@ -489,13 +489,14 @@ a img{
   
   #opacity{
     position: absolute;
-  top: 50%;
-  left: -70%;
-  transform: translate(-50%, -50%) ;
-  width: 800px;
+    left: -250px;
+    right: -350px;
+    top: 0%;
+    transform: translate(0, -20%);
+  width: 600px;
   height: 200px;
-  background-color: #cac5af28;
-  animation: antirotate 30s infinite linear;
+  background-color: #d6d0b863;
+  animation: antirotate 45s infinite linear;
 }
 @keyframes antirotate {
     from {
@@ -507,47 +508,70 @@ a img{
     }
   }
     
-  .globe i {
+  .iconContainer {
     position: absolute;
-
+    top: 50%;
     transform-style: preserve-3d;
-    
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  .globe i:nth-child(1) {
+  
+
+  .iconContainer:nth-child(1) {
     transform:  rotateY(0deg) translateZ(300px);
-    top: 50%;
+  }
+  .iconContainer:nth-child(2) {
+    transform:  rotateY(51.43deg) translateZ(300px);
     
   }
-  .globe i:nth-child(2) {
-    transform:  rotateY(51deg) translateZ(300px);
-    top: 50%;
+  .iconContainer:nth-child(3) {
+    transform:  rotateY(102.86deg) translateZ(300px);
   }
-  .globe i:nth-child(3) {
-    transform:  rotateY(102deg) translateZ(300px);
-    top: 50%;
+  .iconContainer:nth-child(4) {
+    transform: rotateY(154.29deg) translateZ(300px);
   }
-  .globe i:nth-child(4) {
-    transform: rotateY(153deg) translateZ(300px);
-    top: 50%;
+  .iconContainer:nth-child(5) {
+    transform:  rotateY(205.71deg) translateZ(300px);
   }
-  .globe i:nth-child(5) {
-    transform:  rotateY(204deg) translateZ(300px);
-    top: 50%;
+  .iconContainer:nth-child(6) {
+    transform:  rotateY(257.14deg) translateZ(300px);
   }
-  .globe i:nth-child(6) {
-    transform:  rotateY(256deg) translateZ(300px);
-    top:50%;
-  }
-  .globe i:nth-child(7) {
-    transform: rotateY(308deg) translateZ(300px);
-    top: 50%;
+  .iconContainer:nth-child(7) {
+    transform: rotateY(308.57deg) translateZ(300px);
   }
   
   
  #globecontainer{
-    position: absolute;
-     top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+ }
+ #competences{
+    height: 400px;
+    width:900px;
+    margin:auto;
+ }
+
+ #about{
+    background: #d6d0b8;
+    margin: 40px;
+    box-shadow: 2px 2px 2px 2px #a09e89;
+    border-radius: 1px;
+ }
+ #about h2{
+    background-color: #a7a28e91;
+    padding-left: 10px;
+ }
+ #about p{
+    margin:  20px 40px;
+ }
+ #about p:nth-child(2){
+    margin-top: 20px;
+ }
+ #about p:last-child{
+    padding-bottom: 40px;
  }

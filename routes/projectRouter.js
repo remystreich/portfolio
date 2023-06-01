@@ -113,14 +113,10 @@ projectRouter.get('/deleteProject/:id', authguard, async (req, res) => {
 //afficher page projects
 projectRouter.get('/projects',  async (req, res) => {
     try {
-        let project = await projectsModel.find()
-        // Tri des produits par date croissante
-        let croissantProjects = project.sort((a, b) => new Date(a.date) - new Date(b.date));
-        // Tri des produits par date décroissante
-        let decroissantProjects = project.sort((a, b) => new Date(b.date) - new Date(a.date));
+        let project = await projectsModel.find().sort({ date: -1 });
         res.render('templates/visitor/projects.twig', {
             user: req.session.owner,
-            projects: croissantProjects,       //envoie la liste de projet de la bdd au front
+            projects: project,       //envoie la liste de projet de la bdd au front
             action: "projects",     //surbrillance de l'onglet
         })
     } catch (error) {
