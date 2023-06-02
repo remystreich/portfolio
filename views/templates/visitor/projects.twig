@@ -1,14 +1,17 @@
 {% extends "../../base.twig" %}
 
 {% block main %}
-    <h1>Mes projets</h1>
-     <select id="sortSelector" >
-            <option value="asc">Trier par date croissante</option>
-            <option value="desc">Trier par date décroissante</option>
-        </select>
-    <div id="displayprojects">
-        {% include "../../layouts/_listProjects.twig" %}   
-        {% include "../../layouts/_projectdetail.twig" %}
-    </div>
+	<h1>Mes projets</h1>
+	<div class="sortSelector">
+		<label for="sortOrder">Trier par :</label>
+		<select id="sortOrder" name="sortOrder" onchange="sortOrder(this)">
+			<option value="desc" {% if sortOrder == 'desc' %} selected {% endif %}>Date décroissante</option>
+			<option value="asc" {% if sortOrder == 'asc' %} selected {% endif %}>Date croissante</option>
+		</select>
+	</div>
+	<div id="displayprojects">
+		{% include "../../layouts/_listProjects.twig" %}
+		{% include "../../layouts/_projectdetail.twig" %}
+	</div>
 
 {% endblock %}

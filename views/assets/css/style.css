@@ -575,3 +575,12 @@ a img{
  #about p:last-child{
     padding-bottom: 40px;
  }
+
+ select{
+    background-color: transparent;
+    border: none;
+ }
+ .sortSelector{
+    margin-left: 35px;
+    margin-top: 35px;
+ }

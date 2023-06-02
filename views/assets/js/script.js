@@ -41,4 +41,8 @@ function displayproject(e){
     document.getElementById('projectInformation').style.display = 'block';
 }
 
-
+function sortOrder(select) {
+    const sortOrder = select.value;
+    // Effectuer une redirection de page avec le paramètre de tri
+    window.location.href = '/projects/' + sortOrder;
+  }

@@ -111,13 +111,17 @@ projectRouter.get('/deleteProject/:id', authguard, async (req, res) => {
 })
 
 //afficher page projects
-projectRouter.get('/projects',  async (req, res) => {
+projectRouter.get('/projects/:sortOrder?',  async (req, res) => {
     try {
-        let project = await projectsModel.find().sort({ date: -1 });
+        const sortOrder = req.params.sortOrder || 'desc'; // Valeur par défaut : décroissant
+        const sortOption = sortOrder === 'asc' ? 1 : -1;
+        
+        let project = await projectsModel.find().sort({ date: sortOption });
         res.render('templates/visitor/projects.twig', {
             user: req.session.owner,
             projects: project,       //envoie la liste de projet de la bdd au front
-            action: "projects",     //surbrillance de l'onglet
+            action: "projects",      //surbrillance de l'onglet
+            sortOrder: sortOrder     
         })
     } catch (error) {
         console.log(error);

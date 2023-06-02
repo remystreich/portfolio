@@ -1,7 +1,6 @@
 <div class="list">
     <div class="listwraper">
-        
-        {% for project in projects %}
+        {% for project in projects  %}
             <div class="projectswrapper">
                 <a href="#projectInformation"><h3 class="projects" data-project="{{project | json_encode() | escape}}" onclick='displayproject(this)'> ❖ {{project.name}}</h3>
                 </a>
