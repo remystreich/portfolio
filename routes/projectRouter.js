@@ -13,6 +13,7 @@ projectRouter.get('/dashboard', authguard,  async (req, res) => {
             projects: project,       //envoie la liste de projet de la bdd au front
             user: req.session.owner, //conditionne l'apparition du dashboard dans la nav
             action: "dashboard",     //surbrillance de l'onglet
+            
         })
     } catch (error) {
         console.log(error);
@@ -20,7 +21,7 @@ projectRouter.get('/dashboard', authguard,  async (req, res) => {
     }
 })
 
-//afficher form creation user
+//afficher form creation projet
 projectRouter.get('/addProject', authguard, async (req, res) => {
     try {
         res.render('templates/owner/createProject.twig'), {   
@@ -121,7 +122,7 @@ projectRouter.get('/projects/:sortOrder?',  async (req, res) => {
             user: req.session.owner,
             projects: project,       //envoie la liste de projet de la bdd au front
             action: "projects",      //surbrillance de l'onglet
-            sortOrder: sortOrder     
+            sortOrder: sortOrder,     
         })
     } catch (error) {
         console.log(error);
