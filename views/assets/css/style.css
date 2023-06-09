@@ -51,7 +51,7 @@ body {
 }
 
 .containerbody {
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
     background-color: #cac5afe0;
     background-size: cover;
@@ -472,7 +472,7 @@ a img{
 
 .globe {
     perspective: 6000px;
-    animation: rotate 15s infinite linear;
+    animation: rotate 25s infinite linear;
     transform-style: preserve-3d;
     width: 1px;
     display: flex;
@@ -497,7 +497,7 @@ a img{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 100px;
+    width: 160px;
   }
   
 
@@ -505,25 +505,30 @@ a img{
     transform:  rotateY(0deg) translateZ(300px);
   }
   .iconContainer:nth-child(2) {
-    transform:  rotateY(51.43deg) translateZ(300px);
+    transform:  rotateY(40deg) translateZ(300px);
     
   }
   .iconContainer:nth-child(3) {
-    transform:  rotateY(102.86deg) translateZ(300px);
+    transform:  rotateY(80deg) translateZ(300px);
   }
   .iconContainer:nth-child(4) {
-    transform: rotateY(154.29deg) translateZ(300px);
+    transform: rotateY(120deg) translateZ(300px);
   }
   .iconContainer:nth-child(5) {
-    transform:  rotateY(205.71deg) translateZ(300px);
+    transform:  rotateY(160deg) translateZ(300px);
   }
   .iconContainer:nth-child(6) {
-    transform:  rotateY(257.14deg) translateZ(300px);
+    transform:  rotateY(200deg) translateZ(300px);
   }
   .iconContainer:nth-child(7) {
-    transform: rotateY(308.57deg) translateZ(300px);
+    transform: rotateY(240deg) translateZ(300px);
   }
-
+  .iconContainer:nth-child(8) {
+    transform: rotateY(280deg) translateZ(300px);
+  }
+  .iconContainer:nth-child(9) {
+    transform: rotateY(320deg) translateZ(300px);
+  }
   #opacity{
     position: absolute;
     left: -250px;
@@ -533,7 +538,7 @@ a img{
   width: 600px;
   height: 200px;
   background-color: #d6d0b863;
-  animation: antirotate 15s infinite linear;
+  animation: antirotate 25s infinite linear;
 }
 @keyframes antirotate {
     from {
@@ -593,7 +598,7 @@ a img{
     margin: 5px 20px;
  }
  .custom-icon {
-    max-width: 100px;
+    
     font-size: 160px; /* Taille de la police */
     line-height: 160px; /* Hauteur de ligne */
   }
