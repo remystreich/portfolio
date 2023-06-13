@@ -30,8 +30,9 @@ function displayproject(e){
     let git = document.getElementById('projectGit');
     let url = document.getElementById('projectUrl');
     let description = document.getElementById('projectDescription');
-    
     let img = document.getElementById('projectimg');
+    img.style.border ="solid 5px #d6d0b8"
+    img.style.boxShadow = "2px 2px 2px 2px #a09e89"
     img.src = "/img/uploads/"+ project.image;
     git.innerText= "URL github : "+ project.gitUrl;
     git.href = project.gitUrl;
