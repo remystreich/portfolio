@@ -38,6 +38,10 @@
     100%{ opacity: 1; transform: perspective(400px) rotateY(0deg); }
     }
 
+    html{
+        max-width: 100vh;
+    }
+
 .mesh {
     background-image: url('../img/mesh.001.png');
     position: relative;
@@ -47,10 +51,11 @@
 body {
     background-image: url('../img/bgimg.001.jpeg');
     background-size: cover;
-   
+    
 }
 
 .containerbody {
+    
     min-width: 100%;
     min-height: 100vh;
     background-color: #cac5afe0;
@@ -395,6 +400,9 @@ main h1{
     width: 100%;
     height: auto;
     margin-top: 20px;
+    border: solid 5px #d6d0b8;
+    box-shadow: 2px 2px 2px 2px #a09e89;
+
 }
 #projectInformation{
     flex: 1;
@@ -416,12 +424,14 @@ main h1{
 #lobby{
     display: flex;
     margin: 100px;
+    max-width: 100vh;
+    
 }
 #lobby div img{
     opacity: 0.7;
 }
 #lobby article h1{
-    font-size: 70px;
+    font-size: 63px;
     margin: 0;
 }
 #lobby article{
@@ -437,6 +447,7 @@ main h1{
     font-size: 25px;
     margin: 0;
     padding-left: 50px;
+    
 }
 
 #contactForm{
@@ -505,29 +516,32 @@ a img{
     transform:  rotateY(0deg) translateZ(300px);
   }
   .iconContainer:nth-child(2) {
-    transform:  rotateY(40deg) translateZ(300px);
+    transform:  rotateY(36deg) translateZ(300px);
     
   }
   .iconContainer:nth-child(3) {
-    transform:  rotateY(80deg) translateZ(300px);
+    transform:  rotateY(72deg) translateZ(300px);
   }
   .iconContainer:nth-child(4) {
-    transform: rotateY(120deg) translateZ(300px);
+    transform: rotateY(108deg) translateZ(300px);
   }
   .iconContainer:nth-child(5) {
-    transform:  rotateY(160deg) translateZ(300px);
+    transform:  rotateY(144deg) translateZ(300px);
   }
   .iconContainer:nth-child(6) {
-    transform:  rotateY(200deg) translateZ(300px);
+    transform:  rotateY(180deg) translateZ(300px);
   }
   .iconContainer:nth-child(7) {
-    transform: rotateY(240deg) translateZ(300px);
+    transform: rotateY(216deg) translateZ(300px);
   }
   .iconContainer:nth-child(8) {
-    transform: rotateY(280deg) translateZ(300px);
+    transform: rotateY(252deg) translateZ(300px);
   }
   .iconContainer:nth-child(9) {
-    transform: rotateY(320deg) translateZ(300px);
+    transform: rotateY(288deg) translateZ(300px);
+  }
+  .iconContainer:nth-child(10) {
+    transform: rotateY(324deg) translateZ(300px);
   }
   #opacity{
     position: absolute;

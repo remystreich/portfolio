@@ -68,6 +68,7 @@
     #lobby{
         display: block;
         margin: 0px;
+        
     }
     #lobby div {
       display: flex;
@@ -77,12 +78,13 @@
         margin: auto;
     }
     #lobby article h1{
-        font-size: 30px;
+        font-size: 28px;
         margin: 0;
     }
     #lobby article{
         padding-top: 20px;
         padding-left: 9px;
+        
     }
     #lobby article h2{
         font-size: 25px;
@@ -91,8 +93,9 @@
     }
     #lobby article h3{
         font-size: 20px;
-        margin: 0;
+        margin:  30px 0px;
         padding-left: 0px;
+        
     }
 
     #displayprojects{
@@ -135,35 +138,37 @@
         line-height: 100px; /* Hauteur de ligne */
       }
       .iconContainer:nth-child(1) {
-        transform:  rotateY(0deg) translateZ(200px);
+        transform:  rotateY(0deg) translateZ(180px);
       }
       .iconContainer:nth-child(2) {
-        transform:  rotateY(40deg) translateZ(200px);
+        transform:  rotateY(36deg) translateZ(180px);
         
       }
       .iconContainer:nth-child(3) {
-        transform:  rotateY(80deg) translateZ(200px);
+        transform:  rotateY(72deg) translateZ(180px);
       }
       .iconContainer:nth-child(4) {
-        transform: rotateY(120deg) translateZ(200px);
+        transform: rotateY(108deg) translateZ(180px);
       }
       .iconContainer:nth-child(5) {
-        transform:  rotateY(160deg) translateZ(200px);
+        transform:  rotateY(144deg) translateZ(180px);
       }
       .iconContainer:nth-child(6) {
-        transform:  rotateY(200deg) translateZ(200px);
+        transform:  rotateY(180deg) translateZ(180px);
       }
       .iconContainer:nth-child(7) {
-        transform: rotateY(240deg) translateZ(200px);
+        transform: rotateY(216deg) translateZ(180px);
       }
       .iconContainer:nth-child(8) {
-        transform: rotateY(280deg) translateZ(200px);
+        transform: rotateY(252deg) translateZ(180px);
         width: 100px;
       }
       .iconContainer:nth-child(9) {
-        transform: rotateY(320deg) translateZ(200px);
-       
-       
+        transform: rotateY(288deg) translateZ(180px);
+        width: 100px;
+      }
+      .iconContainer:nth-child(10) {
+        transform: rotateY(324deg) translateZ(180px);
       }
 }
 
