@@ -43,9 +43,9 @@ function displayproject(e) {
     img.style.border = "solid 5px #d6d0b8"
     img.style.boxShadow = "2px 2px 2px 2px #a09e89"
     img.src = "/img/uploads/" + project.image;
-    git.innerText = "URL github : " + project.gitUrl;
+    git.innerText = "Lien github : " + project.gitUrl;
     git.href = project.gitUrl;
-    url.innerText = "URL : " + project.url;
+    url.innerText = "Lien : " + project.url;
     url.href = project.url;
     description.innerText = project.description;
     document.getElementById('projectInformation').style.display = 'block';
@@ -56,3 +56,4 @@ function sortOrder(select) {
     // Effectuer une redirection de page avec le paramètre de tri
     window.location.href = '/projects/' + sortOrder;
 }
+

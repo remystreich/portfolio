@@ -412,13 +412,10 @@ main h1{
 #projectInformation p{
     border-bottom: solid 3px #a7a28e91;
     padding: 0;
-    margin: 20px;
+    margin: 30px 20px;
+   
 }
-#projectInformation a{
-    border-bottom: solid 3px #a7a28e91;
-    padding: 0;
-    margin: 20px;
-}
+
 
 /***********************ACCUEIL**********************************/
 #lobby{
@@ -610,9 +607,21 @@ a img{
  .link{
     background-color: #a7a28e91;
     margin: 5px 20px;
+    width: fit-content;
  }
  .custom-icon {
     
     font-size: 160px; /* Taille de la police */
     line-height: 160px; /* Hauteur de ligne */
+  }
+
+  #projectUrl{
+    background-color: #a7a28e91;
+    padding-left: 8px;
+    margin: 20px
+  }
+  #projectGit{
+    background-color: #a7a28e91;
+    padding-left: 8px;
+    margin: 20px
   }
