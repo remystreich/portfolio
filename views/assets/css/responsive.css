@@ -2,7 +2,7 @@
     body {
         background-image: url('../img/bgresp.jpeg');
     }
-
+   
     main h1{
         margin-left: 20px;
         font-size: 35px;
@@ -74,11 +74,11 @@
       display: flex;
     }
     #lobby div img{
-        width: 320px;
+        width: 88%;
         margin: auto;
     }
     #lobby article h1{
-        font-size: 28px;
+        font-size: 0.9rem;
         margin: 0;
     }
     #lobby article{
@@ -87,12 +87,12 @@
         
     }
     #lobby article h2{
-        font-size: 25px;
+        font-size: 0.9rem;
         margin: 0;
         padding-left: 0px;
     }
     #lobby article h3{
-        font-size: 20px;
+        font-size: 0.9rem;
         margin:  30px 0px;
         padding-left: 0px;
         
